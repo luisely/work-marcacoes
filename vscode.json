@@ -1,0 +1,257 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "remote.SSH.remotePlatform": {
+      "192.168.1.85": "linux",
+      "173.230.137.246": "linux"
+    },
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "[prisma]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "Prisma.prisma"
+    },
+    "git.ignoreWindowsGit27Warning": true,
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter-notebook"
+    },
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "mizu",
+    "advancedNewFile.exclude": {
+      "node_modules": true,
+      "node_modules_electron": true,
+      "dev": true,
+      "dist": true
+    },
+    "material-icon-theme.activeIconPack": "nest",
+    "editor.fontWeight": 400,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
+    "workbench.colorCustomizations": {
+      "[Min Dark]": {
+        "tab.activeBorderTop": "#0A84FF"
+      },
+      },
+    // "yaml.schemas": {
+    //   "file:///c%3A/Users/luisf/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    // },
+    "redhat.telemetry.enabled": true,
+    "python.analysis.indexing": false,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+    },
+    "files.associations": {
+      "*.css": "css",
+      "css": "css"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.codeActionsOnSave": {
+      //"source.fixAll.eslint": "always",
+      "source.addMissingImports": "always",
+      "source.removeUnusedImports": "always",
+      //"source.organizeImports": "always",
+      "source.fixAll.biome": "explicit"
+    },
+    "editor.accessibilitySupport": "off",
+    "css.lint.unknownAtRules": "ignore",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.productIconTheme": "fluent-icons",
+    "CodeGPT.query.language": "Portuguese",
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "editor.guides.bracketPairs": "active",
+    "editor.stickyScroll.enabled": true,
+    "editor.tabSize": 2,
+    "workbench.editor.labelFormat": "short",
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.confirmDragAndDrop": false,
+    "symbols.hidesExplorerArrows": false,
+    "explorer.compactFolders": false,
+    "terminal.integrated.env.windows": {},
+    "terminal.integrated.fontSize": 13,
+    "git.confirmSync": false,
+    "files.eol": "\n",
+    "git.openRepositoryInParentFolders": "never",
+    "tailwindCSS.classAttributes": [
+      "class",
+      "className",
+      "ngClass",
+      "colorVariants",
+      "dropClassName"
+    ],
+    "cSpell.userWords": [
+      "Aerosmith",
+      "Ambev",
+      "amsterda",
+      "Atualizacao",
+      "cartao",
+      "Cascaveletes",
+      "clsx",
+      "condominio",
+      "datetime",
+      "dayjs",
+      "deducao",
+      "descricao",
+      "divisao",
+      "donot",
+      "dont",
+      "elytech",
+      "elyviagens",
+      "endereco",
+      "esbuild",
+      "fastify",
+      "fernando",
+      "Florianopolis",
+      "floripa",
+      "formbody",
+      "giveup",
+      "globo",
+      "grey",
+      "hookform",
+      "horarios",
+      "immer",
+      "Ionicons",
+      "isover",
+      "ispending",
+      "Juridica",
+      "Mamifero",
+      "Mimiu",
+      "monaco",
+      "nodenext",
+      "nosidebar",
+      "presigner",
+      "ptbr",
+      "recorrencia",
+      "rocketseat",
+      "saudacao",
+      "signin",
+      "signout",
+      "sonner",
+      "Sonner",
+      "sqlite",
+      "stylesheet",
+      "supplierapp",
+      "tailwindcss",
+      "tanstack",
+      "teste",
+      "toastify",
+      "Toastify",
+      "typecheck",
+      "uuid",
+      "vanillajs",
+      "Variavel",
+      "vsicons",
+      "webp",
+      "whatsapp",
+      "zustand"
+    ],
+    "yaml.customTags": [
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Join sequence"
+    ],
+    "yaml.format.enable": true,
+    "cSpell.language": "en,pt,pt-BR",
+    "editor.renderLineHighlight": "gutter",
+    "editor.semanticHighlighting.enabled": false,
+    "breadcrumbs.enabled": false,
+    // "workbench.activityBar.location": "hidden", //ESCONDE BARRA ESQUERDA!
+    // "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.statusBar.visible": true,
+    // "apc.electron": {
+    //   "titleBarStyle": "hiddenInset",
+    // },
+    // "apc.header": {
+    //   "height": 28
+    // },
+    // "apc.listRow": {
+    //   "height": 24
+    // },
+ 
+    "workbench.layoutControl.enabled": false,
+    "apc.font.family": "inter",
+    "apc.stylesheet": {
+    ".sidebar *": "font-family: 'inter'",
+    },
+    "explorer.fileNesting.enabled": false,
+    "explorer.fileNesting.patterns": {
+      "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-lock*, bun.lockb, nest*, package-lock*",
+      "tailwind.config.js": "tailwind.config*, postcss.config*",
+      ".env.local": ".env*",
+      ".env": ".env*"
+    },
+    "update.showReleaseNotes": false,
+    "tabnine.experimentalAutoImports": true,
+    "workbench.colorTheme": "Min Dark",
+    "cSpell.ignoreWords": [
+      "operacoes"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.fontSize": 16,
+    "liveServer.settings.donotVerifyTags": true,
+    "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [
+        80
+      ],
+      "editor.selectionHighlight": false,
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": "off"
+    },
+    "explorer.confirmPasteNative": false,
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": false,
+      "markdown": false,
+      "scminput": false,
+      "yml": false
+    },
+    "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+    "[typescript]": {
+      "editor.defaultFormatter": "biomejs.biome",
+      "editor.formatOnSave": true,
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "docker.extension.enableComposeLanguageServer": false,
+    "biome.suggestInstallingGlobally": false,
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    // "[typescriptreact]": {
+    //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    "window.controlsStyle": "custom",
+    "window.titleBarStyle": "custom",
+    "editor.formatOnSave": true,
+    "prettier.printWidth": 190,
+    "editor.formatOnPaste": true,
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+
+  }
