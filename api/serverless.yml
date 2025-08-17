@@ -1,0 +1,86 @@
+org: elytech
+service: marcacoes
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: nodejs22.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:PutItem
+            - dynamodb:GetItem
+            - dynamodb:DeleteItem
+            - dynamodb:UpdateItem
+            - dynamodb:Scan
+            - dynamodb:Query
+          Resource:
+            - !GetAtt Marcacoes.Arn
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedHeaders:
+        - Content-Type
+      allowedMethods:
+        - GET
+        - POST
+        - DELETE
+      exposedResponseHeaders:
+        - Special-Response-Header
+
+package:
+  individually: true
+
+build:
+ esbuild:
+  bundle: true
+  minify: true
+  sourcemap: true
+  exclude:
+    - '@aws-sdk/*'
+  external:
+    - '@aws-sdk/*'
+
+functions:
+  hello:
+    handler: src/main/functions/registerWorkDay.handler
+    events:
+      - httpApi:
+          path: /register
+          method: POST
+  getPontos:
+    handler: src/main/functions/getPontos.handler
+    events:
+      - httpApi:
+          path: /getPontos
+          method: GET
+  deleteRec:
+    handler: src/main/functions/deleteRec.handler
+    events:
+      - httpApi:
+          path: /delete/record
+          method: DELETE
+    key: ${env:API_KEY}
+
+resources:
+  Resources:
+    Marcacoes:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Marcacoes
+        BillingMode: PAY_PER_REQUEST
+        PointInTimeRecoverySpecification:
+          PointInTimeRecoveryEnabled: true
+        AttributeDefinitions:
+          - AttributeName: PK
+            AttributeType: S
+          - AttributeName: SK
+            AttributeType: S
+        KeySchema:
+          - AttributeName: PK
+            KeyType: HASH
+          - AttributeName: SK
+            KeyType: RANGE

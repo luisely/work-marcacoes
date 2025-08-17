@@ -2,10 +2,10 @@ import { useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import toast from 'react-hot-toast'
-import { useRegistros } from '@/hooks/useRegistros'
+import { useRegistros } from '@/app/hooks/useRegistros'
+import { apiService } from '@/app/services'
+import type { PontoData } from '@/app/services/apiService'
 import { queryClient } from '@/lib/queryCliente'
-import { apiService } from '@/services'
-import type { PontoData } from '@/services/apiService'
 
 interface Ponto {
 	date: string

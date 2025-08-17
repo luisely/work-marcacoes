@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import type { PontoData } from './services/apiService'
+import type { PontoData } from './app/services/apiService'
 import { RegistroForm } from './view/form/RegisterForm'
 import { DisplayPontos } from './view/pontos/DisplayPontos'
 
@@ -27,7 +27,7 @@ function App() {
 
 	return (
 		<FormProvider {...methods}>
-			<div className="bg-[url('/pic1_.jpg')] bg-cover w-screen h-screen flex items-center justify-center">
+			<div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-dvh flex items-center justify-center">
 				<div className="flex flex-col items-center justify-center h-full w-full max-w-xs">
 					<RegistroForm />
 

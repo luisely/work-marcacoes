@@ -1,13 +1,13 @@
 import { ChevronDownIcon } from 'lucide-react'
 import { Controller, useFormContext } from 'react-hook-form'
 import toast from 'react-hot-toast'
+import { useAddRegistro } from '@/app/hooks/useRegistros'
+import type { PontoData } from '@/app/services/apiService'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import { Input } from '@/components/ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Spinner } from '@/components/ui/spinner'
-import { useAddRegistro } from '@/hooks/useRegistros'
-import type { PontoData } from '@/services/apiService'
 
 export function RegistroForm() {
 	const { register, handleSubmit, control } = useFormContext<PontoData>()
@@ -28,8 +28,8 @@ export function RegistroForm() {
 				<div className="border-t border-l border-[#3d3940]/25 rounded-tl-md">
 					<Input
 						{...register('name', { required: true })}
-						className="w-full max-w-xs py-6 px-4 rounded-none rounded-tl-md outline-none text-lg border-none text-white"
-						placeholder="Nome"
+						className="w-full max-w-xs py-6 px-4 rounded-none rounded-tl-md outline-none text-lg border-none text-white "
+						placeholder="USER"
 						maxLength={20}
 						spellCheck="false"
 						// 4. EVENTOS TIPADOS
@@ -38,10 +38,11 @@ export function RegistroForm() {
 				<div className="border-t border-r border-[#3d3940]/25 rounded-tr-md">
 					<Input
 						{...register('cpf3Digits', { required: true, pattern: /^\d{3}$/ })}
+						inputMode="numeric"
 						className="w-full max-w-xs py-6 px-4 rounded-none rounded-tr-md outline-none text-lg text-center hover:border-slate-500 transition border-1  border-none text-white"
-						type="number"
-						placeholder="id"
-						maxLength={3}
+						type="password"
+						placeholder="PIN"
+						maxLength={6}
 					/>
 				</div>
 				<div className="border-t border-l border-[#3d3940]/25">
