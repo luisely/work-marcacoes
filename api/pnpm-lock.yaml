@@ -4,6 +4,7 @@ specifiers:
   '@aws-sdk/client-dynamodb': ^3.844.0
   '@aws-sdk/lib-dynamodb': ^3.844.0
   '@biomejs/biome': ^2.1.2
+  '@middy/core': ^6.4.3
   '@types/aws-lambda': ^8.10.150
   '@types/jsonwebtoken': ^9.0.10
   '@types/node': ^24.0.13
@@ -15,6 +16,7 @@ specifiers:
 dependencies:
   '@aws-sdk/client-dynamodb': 3.848.0
   '@aws-sdk/lib-dynamodb': 3.850.0_yyd4sflaihq7csbqkqftd6rqa4
+  '@middy/core': 6.4.3
   '@types/jsonwebtoken': 9.0.10
   bcryptjs: 3.0.2
   jsonwebtoken: 9.0.2
@@ -596,6 +598,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@middy/core/6.4.3:
+    resolution: {integrity: sha512-bVb6fwG4FhmJFbxJPumr/y7/ujy7b3NpL6d1ld4uuxUy7/FO8l5tvTdsEk4cDqsrnWFq6M6bmAvfFBPgAALi1A==}
+    engines: {node: '>=20'}
+    dev: false
 
   /@smithy/abort-controller/4.0.4:
     resolution: {integrity: sha512-gJnEjZMvigPDQWHrW3oPrFhQtkrgqBkyjj3pCIdF3A5M6vsZODG93KNlfJprv6bp4245bdT32fsHK4kkH3KYDA==}

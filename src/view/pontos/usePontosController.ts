@@ -1,11 +1,9 @@
 import { useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
-import { useFormContext } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { useRegistros } from '@/app/hooks/useRegistros'
-import { apiService } from '@/app/services'
-import type { PontoData } from '@/app/services/apiService'
 import { queryClient } from '@/lib/queryCliente'
+import { apiService } from '@/services'
 
 interface Ponto {
 	date: string
@@ -13,14 +11,13 @@ interface Ponto {
 }
 
 export function usePontosController() {
-	const { watch } = useFormContext<PontoData>()
 	const [confirmModalOpen, setConfirmModalOpen] = useState(false)
 	const [pontoToBeDeleted, setPontoToBeDeleted] = useState<null | Ponto>(null)
 
-	const { registros, isLoading } = useRegistros(watch().name, watch().cpf3Digits)
+	const { registros, isLoading } = useRegistros()
 
 	const { isPending: isLoadingDelete, mutateAsync: removePonto } = useMutation({
-		mutationFn: () => apiService.deletePonto(watch().name, watch().cpf3Digits, pontoToBeDeleted!.date, pontoToBeDeleted!.time),
+		mutationFn: () => apiService.deletePonto(pontoToBeDeleted!.date, pontoToBeDeleted!.time),
 	})
 
 	async function handleDelete() {

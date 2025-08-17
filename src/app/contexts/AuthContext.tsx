@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
 import { createContext, useCallback, useEffect, useState } from 'react'
 import { toast } from 'react-hot-toast'
+import { apiService } from '@/services'
 import { localStorageKeys } from '../config/localStorageKeys'
 import type { User } from '../entities/User'
-import { apiService } from '../services'
 
 interface AuthContextValue {
 	signedIn: boolean

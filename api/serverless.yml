@@ -51,19 +51,46 @@ functions:
       - httpApi:
           path: /register
           method: POST
+    environment:
+      JWT_SECRET: ${env:JWT_SECRET}
+      TABLE_NAME: ${env:TABLE_NAME}
+  signUp:
+    handler: src/main/functions/SignUp.handler
+    events:
+      - httpApi:
+          path: /sign
+          method: POST
+    environment:
+      JWT_SECRET: ${env:JWT_SECRET}
+      TABLE_NAME: ${env:TABLE_NAME}
+    signUp:
+  login:
+    handler: src/main/functions/Login.handler
+    events:
+      - httpApi:
+          path: /login
+          method: POST
+    environment:
+      JWT_SECRET: ${env:JWT_SECRET}
+      TABLE_NAME: ${env:TABLE_NAME}
   getPontos:
     handler: src/main/functions/getPontos.handler
     events:
       - httpApi:
           path: /getPontos
           method: GET
+    environment:
+      JWT_SECRET: ${env:JWT_SECRET}
+      TABLE_NAME: ${env:TABLE_NAME}
   deleteRec:
     handler: src/main/functions/deleteRec.handler
     events:
       - httpApi:
           path: /delete/record
           method: DELETE
-    key: ${env:API_KEY}
+    environment:
+      JWT_SECRET: ${env:JWT_SECRET}
+      TABLE_NAME: ${env:TABLE_NAME}
 
 resources:
   Resources:

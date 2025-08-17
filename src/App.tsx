@@ -1,6 +1,9 @@
-import { useEffect } from 'react'
+import { QueryClientProvider } from '@tanstack/react-query'
 import { FormProvider, useForm } from 'react-hook-form'
-import type { PontoData } from './app/services/apiService'
+import { Toaster } from 'react-hot-toast'
+import { AuthProvider } from './app/contexts/AuthContext'
+import { queryClient } from './lib/queryCliente'
+import type { PontoData } from './services/apiService'
 import { RegistroForm } from './view/form/RegisterForm'
 import { DisplayPontos } from './view/pontos/DisplayPontos'
 
@@ -16,25 +19,21 @@ function App() {
 		},
 	})
 
-	useEffect(() => {
-		const savedData = localStorage.getItem('formSavedData')
-
-		if (savedData) {
-			console.log(JSON.parse(savedData))
-			methods.reset(JSON.parse(savedData)) // Set form values from localStorage
-		}
-	}, [methods.reset])
-
 	return (
-		<FormProvider {...methods}>
-			<div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-dvh flex items-center justify-center">
-				<div className="flex flex-col items-center justify-center h-full w-full max-w-xs">
-					<RegistroForm />
+		<QueryClientProvider client={queryClient}>
+			<AuthProvider>
+				<FormProvider {...methods}>
+					<div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-dvh flex items-center justify-center">
+						<div className="flex flex-col items-center justify-center h-full w-full max-w-xs">
+							<RegistroForm />
 
-					<DisplayPontos />
-				</div>
-			</div>
-		</FormProvider>
+							<DisplayPontos />
+						</div>
+					</div>
+				</FormProvider>
+			</AuthProvider>
+			<Toaster />
+		</QueryClientProvider>
 	)
 }
 
