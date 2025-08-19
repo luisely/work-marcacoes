@@ -45,27 +45,26 @@ build:
     - '@aws-sdk/*'
 
 functions:
-  hello:
-    handler: src/main/functions/registerWorkDay.handler
+  add-horarios:
+    handler: src/main/functions/add-horarios.handler
     events:
       - httpApi:
-          path: /register
+          path: /horarios
           method: POST
     environment:
       JWT_SECRET: ${env:JWT_SECRET}
       TABLE_NAME: ${env:TABLE_NAME}
-  signUp:
-    handler: src/main/functions/SignUp.handler
+  sign-up:
+    handler: src/main/functions/sign-up.handler
     events:
       - httpApi:
-          path: /sign
+          path: /signup
           method: POST
     environment:
       JWT_SECRET: ${env:JWT_SECRET}
       TABLE_NAME: ${env:TABLE_NAME}
-    signUp:
   login:
-    handler: src/main/functions/Login.handler
+    handler: src/main/functions/login.handler
     events:
       - httpApi:
           path: /login
@@ -73,17 +72,17 @@ functions:
     environment:
       JWT_SECRET: ${env:JWT_SECRET}
       TABLE_NAME: ${env:TABLE_NAME}
-  getPontos:
-    handler: src/main/functions/getPontos.handler
+  get-horarios:
+    handler: src/main/functions/get-horarios.handler
     events:
       - httpApi:
-          path: /getPontos
+          path: /horarios
           method: GET
     environment:
       JWT_SECRET: ${env:JWT_SECRET}
       TABLE_NAME: ${env:TABLE_NAME}
-  deleteRec:
-    handler: src/main/functions/deleteRec.handler
+  delete:
+    handler: src/main/functions/delete.handler
     events:
       - httpApi:
           path: /delete/record

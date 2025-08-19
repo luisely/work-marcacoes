@@ -1,6 +1,7 @@
 import type { APIGatewayProxyEventV2 } from 'aws-lambda'
 import jwt from 'jsonwebtoken'
 import { env } from '../../../shared/env'
+import { response } from '../utils/response'
 
 export interface AuthUser {
 	sub: string
@@ -19,7 +20,7 @@ export const authMiddleware = () => {
 				// 👇 aqui você "injeta" no event
 				;(request.event as any).user = payload
 			} catch {
-				throw new Error('Forbidden')
+				return response(403, { message: 'Unauthorized Access' })
 			}
 		},
 	}

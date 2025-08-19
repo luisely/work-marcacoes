@@ -2,12 +2,13 @@ import { DeleteCommand } from '@aws-sdk/lib-dynamodb'
 import middy from '@middy/core'
 import type { APIGatewayProxyEventV2 } from 'aws-lambda'
 import { z } from 'zod'
+import { env } from '../../../shared/env'
 import { dynamoClient } from '../../libs/dynamoClient'
 import { type AuthUser, authMiddleware } from '../middlewares/authMiddleware'
 import { response } from '../utils/response'
 
 const schemaDateAndTime = z.object({
-	date: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/),
+	date: z.string().regex(/^\d{4}\/\d{2}\/\d{2}$/),
 	time: z.string().regex(/^\d{2}:\d{2}$/),
 })
 
@@ -16,7 +17,7 @@ const baseHandler = async (event: APIGatewayProxyEventV2 & { user?: AuthUser }) 
 		const { date, time } = schemaDateAndTime.parse(event.queryStringParameters)
 
 		const command = new DeleteCommand({
-			TableName: 'Marcacoes',
+			TableName: env.TABLE_NAME,
 			Key: {
 				PK: `USER#${event.user?.sub}`,
 				SK: `DAY#${date}#${time}`,

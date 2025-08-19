@@ -10,6 +10,7 @@ specifiers:
   '@types/node': ^24.0.13
   bcryptjs: ^3.0.2
   jsonwebtoken: ^9.0.2
+  reflect-metadata: ^0.2.2
   typescript: ^5.8.3
   zod: ^4.0.10
 
@@ -20,6 +21,7 @@ dependencies:
   '@types/jsonwebtoken': 9.0.10
   bcryptjs: 3.0.2
   jsonwebtoken: 9.0.2
+  reflect-metadata: 0.2.2
   zod: 4.0.10
 
 devDependencies:
@@ -1129,6 +1131,10 @@ packages:
 
   /obliterator/1.6.1:
     resolution: {integrity: sha512-9WXswnqINnnhOG/5SLimUlzuU1hFJUc8zkwyD59Sd+dPOMf05PmnYG/d6Q7HZ+KmgkZJa1PxRso6QdM3sTNHig==}
+    dev: false
+
+  /reflect-metadata/0.2.2:
+    resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
     dev: false
 
   /safe-buffer/5.2.1:
